@@ -1,0 +1,30 @@
+<!doctype <!DOCTYPE html>
+<html>
+	<head>
+		<title>Crear Nodos y Anadir </title>
+
+		<script type="text/javascript">
+		//DOC document object model
+		var tags;
+		function load(){
+			tags=document.getElementsByTagName('p');
+		}
+		function test(){
+			var elemento = document.createElement("p");
+			var text = document.createTextNode("elemento"+ (tags.length+1));
+			elemento.appendChild(text);
+			document.getElementById("caja").appendChild(elemento);
+			load();
+		}
+
+		</script>
+	</head>
+
+	<body  onload="load()">
+
+	<div id="caja">
+		
+	</div>
+	<input type="button" onclick="test()" value="Click"/>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+body{
+	background-color: white;
+}
+
+#main-content{
+width: 960px;
+height: 1080px;
+margin-top: 0px;
+margin-right: auto;
+margin-left: auto;
+}
+
+#header-content{
+background-color: #000000;
+width: 100%;
+height: 100px;
+}
+
+#title-content{
+position: relative;
+top: 70px;
+left: 0px;
+width: 100%;
+height: 200px;
+}
+
+#description{
+position: relative;
+top:30px;
+left: 0px;
+font-size: 22;
+width: 100%;
+height: 150px;
+}
+
+#infodiv{
+width: 100%;
+height: 400px;
+}
+
+.infoBox{
+background: url("../img/service-box-bg.png");
+margin-right: 20px;
+display: inline-block;
+width: 285px;
+height: 358px;
+}
+
+#botDiv{
+display: inline-block;
+margin-right: 20px;
+width: 100%;
+height: 358px;
+}
+
+.separadorHorizontal{
+	color: #353434;	
+	border: dotted;
+	width: 100%;
+	height: 0px;
+}
+
+.separadorVertical{
+	margin-top: auto;
+	margin-bottom: auto;
+	display: inline-block;
+	width: 0px;
+	height: 90%;
+	border-style: dotted;
+}
+
+#izqDiv{
+	display: inline-block;
+	width: 48%;
+	height: 100%;
+}
+.carasDiv{
+	margin-top: 2%;
+	margin-bottom: 2%;
+	display: inline-block;
+	width: 100%;
+	height: 95px;
+}
+
+.espacio{
+	width: 100%;
+	height: 5px;
+}
+
+#firma{
+	color: #716161;
+	font-family: "Arial";
+	width: 100%;
+	height: 10px;
+}
+
+#contacto{
+	position: relative;
+	top: 60px;
+	left: 200px;
+	width: 550px;
+	height: 25px;
+	border-style: solid;
+	font-family: "Arial";
+}
+

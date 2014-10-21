@@ -1,0 +1,21 @@
+
+
+body
+{
+	background-repeat: no-repeat;
+	background: url("background.jpg");
+}
+
+.parrafo{
+	color: #ffffff;
+	font: oblique bold 120% cursive; 
+}
+
+.link{
+cursor: pointer;
+}												
+
+#miusica{
+	width: 40px;
+	height: 40px;
+}

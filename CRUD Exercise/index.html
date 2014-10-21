@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>App</title>
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <form id="formPeople">
+            <input type="text" id="txtFirstName" name="txtFirstName" placeholder="Nombre(s)" class="first-name" />
+            <input type="text" id="txtLastName" name="txtLastName" placeholder="Apellido(s)" class="last-name" />
+            <select id="ddlAges" name="ddlAges" class="ddl-ages"></select>
+            <button type="button" id="btnSave" class="btn-save">Guardar</button>
+            <button type="button" id="btnUpdate" class="btn-save">Actualizar</button>
+        </form>
+        <table>
+            <caption>Tabla de Personas</caption>
+            <thead>
+                <tr>
+                    <th>Nombre(s)</th>
+                    <th>Apellido(s)</th>
+                    <th>Edad</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+        <div id="people-cards" class="people-cards"><div>
+            <script src="js/persona.js"></script>
+            <script src="js/app.js"></script>
+            
+            <script>                
+                function delete1(index){
+                    //Llamar a la funcion de JS
+                    console.log('Borre la posicion: '+index);
+                }
+                function update1(index){
+                    console.log('Edite la posicion: '+index);   
+                }
+            </script>
+            </body>
+</html>
