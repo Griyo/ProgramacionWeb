@@ -1,4 +1,4 @@
-document.(function(){
+(function(){
     var people = [];
     var rangeAges = [{label:'15-20', value:'15-20'},{label:'21-30', value:'21-30'},{label:'31-40', value:'31-40'}];
     var btnSave;
@@ -26,16 +26,12 @@ document.(function(){
                 });
                 //app.displayListOfPeople();
                 app.displayListOfPeopleCards();
-                
-                txtFirstName.value='';
-                txtLastName.value='';
             });
             btnUpdate = document.getElementById('btnUpdate');
-            
             btnUpdate.addEventListener('click', function(e){
                 app.update(this.value);
-                btnUpdate.style.display='none';
                 btnSave.style.display='inline-block';
+                btnUpdate.style.display='none';
             })
         },
         create:function(person){
@@ -45,14 +41,16 @@ document.(function(){
             return people[index];
         },
         update:function(index){
-                people[index].age=ddlAges.value;
-                people[index].first_name=txtFirstName.value;
-                people[index].last_name=txtLastName.value;
-            app.displayListOfPeople();
+            people[index].first_name = txtFirstName.value;
+            people[index].last_name = txtLastName.value;
+            people[index].age = ddlAges.value;     
+            app.displayListOfPeopleCards();
+
         },
         delete:function(index){
             people.splice(index,1);
-            app.displayListOfPeople();
+            //app.displayListOfPeople();
+            app.displayListOfPeopleCards();
         },
         displayListOfPeople:function(){
             tableBody.innerHTML = '';
@@ -83,58 +81,78 @@ document.(function(){
                         txtLastName.value = person.last_name;
                         btnUpdate.style.display ='inline-block';
                         btnUpdate.value = index;
-                        btnSave.style.display = 'none';
                     });
                 }else{
                     btnDelete.attachEvent('onclick', function(e){
                         app.delete(index);
-                    });
-                    btnEdit.attachEvent('onclick', function(e){
-                        var person = app.read(index);
-                        txtFirstName.value = person.first_name;
-                        txtLastName.value = person.last_name;
-                        btnUpdate.style.display ='inline-block';
-                        btnUpdate.value = index;
                     });
                 }
                 tr.insertCell(-1).appendChild(btnDelete);
                 tr.insertCell(-1).appendChild(btnEdit);
             });
         },
-        
         displayListOfPeopleCards:function(){
             var list = document.getElementById('people-cards');
             list.innerHTML = '';
             people.forEach(function(item, index){
-
-                var btnDeleteCard = app.createElement('button',{
-                    id:'card_'+index,
-                    className:'btn-deleteCard',
-                    value:index,
+                var divView = app.createElement('div',{
+                    className:'view'
                 });
-
-
-                console.log(btnDeleteCard);
-
-                list.innerHTML+=app.createCardView(item,btnDeleteCard);
+                var img = app.createElement('img',{
+                    src:'img/1.jpg'
+                });
+                var divDelete = app.createElement('div',{
+                    className:'btnCardDelete'
+                });
+                var divEdit = app.createElement('div',{
+                    className:'btnCardEdit'
+                });
+                var divMask = app.createElement('div',{
+                    className:'mask'
+                });
+                var h2Title = app.createElement('h2');
+                h2Title.innerHTML = item.first_name;
+                var pMensaje = app.createElement('p');
+                var linkAge = app.createElement('a',{
+                    href:'#',
+                    className:'info'
+                });
+                
+                divDelete.addEventListener('click', function(e){
+                    app.delete(index); 
+                    divDelete.style.background='/img/0.jpg';
+                });
+                
+                divEdit.addEventListener('click', function(e){
+                    var person = app.read(index);
+                    txtFirstName.value = person.first_name;
+                    txtLastName.value = person.last_name;
+                    btnSave.style.display='none';
+                    btnUpdate.style.display='inline-block';
+                    btnUpdate.value = index;
+                });
+                
+                linkAge.innerHTML = item.age;
+                divMask.appendChild(h2Title);
+                divMask.appendChild(pMensaje);
+                divMask.appendChild(linkAge);
+                divView.appendChild(divDelete);
+                divView.appendChild(divEdit);
+                divView.appendChild(img);
+                divView.appendChild(divMask);
+                list.appendChild(divView);
             });
         },
-        
-        createCardView:function(item,btnDeleteCard){
+        createCardView:function(item){
             return '<div class="view">'+
                 '<img src="img/1.jpg" />'+
                 '<div class="mask">'+
                 '<h2>'+item.first_name+'</h2>'+
                 '<p>hola que tal</p>'+
                 '<a href="#" class="info">'+item.age+'</a>'+
-                '<div class="botones"> '+
-                '<a href="app.delete('+btnDeleteCard.value+')"><img src="img/delete.png"></a>'+
-                '<a href="javascript:update('+btnDeleteCard.value+')"><img src="img/edit.png"></a>'+
-                '</div>'+
                 '</div>'+
                 '</div>';
         },
-        
         createElement:function(type, attrs){
             var element = document.createElement(type);
             for(property in attrs){
