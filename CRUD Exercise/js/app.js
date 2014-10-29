@@ -7,23 +7,31 @@
     var txtLastName;
     var ddlAges;
     var tableBody;
+    var expregString = /^[a-zA-Z]{1,25}$/;
+    var expregNumber = /^[0-9]{1,10}$/;
+    var expregAlpha = /^[a-zA-Z0-9]{1,30}$/;
+
     var app = {
         init:function(){
             txtFirstName = document.getElementById('txtFirstName');
             txtLastName = document.getElementById('txtLastName');
             ddlAges = document.getElementById('ddlAges');
-            console.log(ddlAges.options);
             rangeAges.forEach(function(item, index){
                 ddlAges.options.add(app.createElement('option',item));
             });
             tableBody = document.getElementById('table-body');
-            btnSave = document.getElementById('btnSave');
+            btnSave = document.getElementById('btnSave');       
+
+            
             btnSave.addEventListener('click', function(e){
                 app.create({
                     'first_name':txtFirstName.value,
                     'last_name':txtLastName.value,
                     'age':ddlAges.options[ddlAges.selectedIndex].value
+                    
+
                 });
+                
                 //app.displayListOfPeople();
                 app.displayListOfPeopleCards();
             });
@@ -34,6 +42,19 @@
                 btnUpdate.style.display='none';
             })
         },
+        
+        validarString:function(cadena){
+            return(expregString.test(cadena));
+        },
+        
+        validarNumber:function(cadena){
+            return(expregNumber.test(cadena));
+        },
+        
+        validarAlpha:function(cadena){
+            return(expregAlpha.test(cadena));
+        },
+        
         create:function(person){
             people.push(person);
         },
@@ -120,7 +141,6 @@
                 
                 divDelete.addEventListener('click', function(e){
                     app.delete(index); 
-                    divDelete.style.background='/img/0.jpg';
                 });
                 
                 divEdit.addEventListener('click', function(e){
