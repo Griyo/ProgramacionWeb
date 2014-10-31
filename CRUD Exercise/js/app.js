@@ -10,6 +10,7 @@
     var expregString = /^[a-zA-Z]{1,25}$/;
     var expregNumber = /^[0-9]{1,10}$/;
     var expregAlpha = /^[a-zA-Z0-9]{1,30}$/;
+    var expregEmail(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
 
     var app = {
         init:function(){
@@ -53,6 +54,13 @@
         
         validarAlpha:function(cadena){
             return(expregAlpha.test(cadena));
+        },
+        
+        validarEmail:function(cadena){
+            return(expregEmail.test(cadena);
+        
+        compararString:function(cadena, string){
+            return(cadena.toLowerCase==string.toLowerCase);
         },
         
         create:function(person){
