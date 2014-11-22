@@ -17,13 +17,15 @@ body{
 	margin-left: auto;
 }
 
-#loginBar{
-	
+#reportDiv{
+    border: solid;
+	display: inline-block;
 	margin-top: 7%;
 	margin-bottom: 40%;
 	background: url("../img/amarillo.jpg");
 	width: 99%;
-	height:92px;
+    
+    
 	/*para Firefox*/
 	-moz-border-radius: 15px 15px 15px 15px;
 	/*para Safari y Chrome*/

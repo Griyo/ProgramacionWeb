@@ -25,6 +25,7 @@
 
             
             btnSave.addEventListener('click', function(e){
+
                 app.create({
                     'first_name':txtFirstName.value,
                     'last_name':txtLastName.value,
@@ -57,8 +58,8 @@
         },
         
         validarEmail:function(cadena){
-            return(expregEmail.test(cadena);
-        
+            return(expregEmail.test(cadena));
+        },
         compararString:function(cadena, string){
             return(cadena.toLowerCase==string.toLowerCase);
         },

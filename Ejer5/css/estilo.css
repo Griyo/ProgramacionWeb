@@ -1,0 +1,59 @@
+#divMain{
+    background: gray;
+    width: 960px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+    background-color: #FF9E00;
+    padding: 15%;
+}
+
+#body{
+ background: green;   
+}
+
+.button{
+    position: relative;
+    margin-left: 25%;
+    border-radius:3px; 
+    -moz-border-radius:3px; /* Firefox */ 
+    -webkit-border-radius:3px; /* Safari y Chrome */ 
+
+    /* Otros estilos */ 
+    border:1px solid #333;
+    background:#FF5240;
+    width:50%;
+    padding:5px;
+    
+}
+
+
+
+.input{
+    position: relative;
+    background: blue;
+    margin-left: 25%;
+    border-radius:3px; 
+    -moz-border-radius:3px; /* Firefox */ 
+    -webkit-border-radius:3px; /* Safari y Chrome */ 
+
+    /* Otros estilos */ 
+    border:1px solid #333;
+    background:#eee;
+    width:50%;
+    padding:5px;
+
+}
+.div{
+    position: relative;
+    left: 25%;
+    border-radius:3px; 
+    -moz-border-radius:3px; /* Firefox */ 
+    -webkit-border-radius:3px; /* Safari y Chrome */ 
+    
+    /* Otros estilos */ 
+    border:1px solid #333;
+    background:#009D91;
+    width:50%;
+    padding:5px;
+}

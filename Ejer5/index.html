@@ -1,0 +1,60 @@
+<!--Path<------?---Paramerto,,,, Validacion de formularios de HTML5,,,,, StepByStep   
+1.Datos Generales: Nombre, Apellido, Sexo, Edad, Numero Telefonico
+2.Direccion: Calle principal, Calle secundaria, numero Ext, Colonia, CP, Ciudad, Estado, Pais
+3.Usuario: Nombre de Usuario, password, verificador password, email
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <title></title>
+</head>
+<body>
+    <div id="divMain">
+    <form id="form" name="form" method="GET">
+        <div id="datosGenerales" class="div">
+        <p><input class="input" id="inputName" type="text" name="name" placeholder="Nombre(s)" /></p>
+        <p><input class="input" id="inputLast" type="text" name="apellido" placeholder="Apellido"/></p>
+        <p><input class="input" id="inputSexo" type="text" name="sexo" placeholder="Sexo" /></p>
+        <p><input class="input" id="inputEdad" type="text" name="edad" placeholder="Edad" /></p>
+        <p><input class="input" id="inputTelefono" type="text" name="telefono" placeholder="Telefono" /></p>
+        <p><button class="button" id="btn1">Siguiente</button></p>
+        </div>    
+            
+        <div id="direccion" class="div">
+        <p><input class="input" id="inputCalle1" type="text" name="calle1" placeholder="Calle Principal" />
+        <input class="input" id="inputCalle2" type="text" name="calle2" placeholder="Calle(s) secundaria(s)" />
+        <input class="input" id="inputNumExt" type="text" name="numExt" placeholder="Numero Exterior" />
+        <input class="input" id="inputColonia" type="text" name="colonia" placeholder="Colonia" /></p>
+        <p><input class="input" id="inputCP" type="text" name="cp" placeholder="Codigo Postal" />
+        
+        <input class="input" id="inputCiudad" type="text" name="ciudad" placeholder="Ciudad" />
+        <input class="input" id="inputEstado" type="text" name="estado" placeholder="Estado" />
+        <input class="input" id="inputPais" type="text" name="pais" placeholder="Pais" /></p>
+        <p><button class="button" id="btn2">Siguiente</button></p>
+        </div>
+        
+        <div id="usuario" class="div">
+        <p><input class="input" id="inputUser" type="text" name="user" placeholder="Username" />
+        <input class="input" id="inputPass" type="text" name="pass" placeholder="Password" />
+        <input class="input" id="inputCheckPass" type="text" name="checkPass" placeholder="Repita password" />
+        <input class="input" id="inputEmail" type="text" name="email" placeholder="Email" /></p>
+        
+        <p><input class="button" id="butSub" type="submit" value="enviar" /></p>
+        </div>
+        
+
+    </form>
+        </div>
+        <script type="text/javascript" src="js/validador.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+
+</html>
+
+
+
+
